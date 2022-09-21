@@ -1,0 +1,25 @@
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">My todo list</h4>
+    <form class="w-100 d-flex todo-form" [formGroup]="form">
+      <input class="w-100 h-100 rounded-0 px-2 border-primary"
+             type="text"
+             formControlName="deal"
+             placeholder="Add, what you need do">
+      <button class="btn btn-primary rounded-0" (click)="addItem()">Add</button>
+    </form>
+    <div class="mt-4">
+      <ul class="d-flex flex-column-reverse px-0">
+        <li class="mt-2 d-flex justify-content-between align-items-center" *ngFor="let todoItem of todoList; index as i">
+          <label class="mt-2 todo-label">
+            <input class="m-2" type="checkbox" [checked]="todoItem.checked" (change)="checkItem(todoItem)">
+            <span>Date: {{todoItem.date}} | <strong>{{todoItem.deal}}</strong></span>
+          </label>
+          <button class="btn btn-danger" (click)="deleteItem(i)">Delete</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+

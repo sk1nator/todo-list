@@ -1,0 +1,22 @@
+.todo {
+  &-form {
+    height: 50px;
+
+    input {
+      outline: none;
+    }
+  }
+
+  &-list {
+    list-style: none;
+    padding: 0;
+
+    .form-check {
+      padding: 0;
+    }
+  }
+
+  &-label {
+    cursor: pointer;
+  }
+}
